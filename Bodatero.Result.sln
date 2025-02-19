@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35806.99 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bodatero.Result", "Bodatero.Result\Bodatero.Result.csproj", "{0E45A2B9-869B-4320-99E3-0F15B93BF1ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bodatero.Result.AspNetCore", "Bodatero.Result.AspNetCore\Bodatero.Result.AspNetCore.csproj", "{811CDB16-52B0-4F48-8C4F-7D2795D005AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E45A2B9-869B-4320-99E3-0F15B93BF1ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E45A2B9-869B-4320-99E3-0F15B93BF1ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E45A2B9-869B-4320-99E3-0F15B93BF1ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E45A2B9-869B-4320-99E3-0F15B93BF1ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{811CDB16-52B0-4F48-8C4F-7D2795D005AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{811CDB16-52B0-4F48-8C4F-7D2795D005AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{811CDB16-52B0-4F48-8C4F-7D2795D005AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{811CDB16-52B0-4F48-8C4F-7D2795D005AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9E4F221F-9EF2-43E1-9AA5-1E9A1BBFCED7}
+	EndGlobalSection
+EndGlobal

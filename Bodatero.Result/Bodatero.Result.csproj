@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Title>Bodatero's Result pattern domain</Title>
+    <Authors>Bodatero</Authors>
+    <Description>The package contains base entities of Result pattern</Description>
+    <Copyright>MIT</Copyright>
+    <PackageProjectUrl>bodatero.result</PackageProjectUrl>
+    <PackageIcon>PackageIcon.png</PackageIcon>
+    <PackageTags>Result; Result Pattern; Minimal API; AspNetCore; Routing;</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="PackageIcon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
