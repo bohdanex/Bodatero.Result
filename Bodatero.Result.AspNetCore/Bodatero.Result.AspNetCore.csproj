@@ -4,12 +4,33 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Title>Result pattern handler</Title>
+    <Authors>Bodatero</Authors>
+    <Company />
+    <Description>The packge provides services for handling endpoints which are returning the Bodatero.Result type object</Description>
+    <PackageProjectUrl></PackageProjectUrl>
+    <PackageIcon>PackageIcon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/bohdanex/Bodatero.Result/tree/master/Bodatero.Result.AspNetCore</RepositoryUrl>
+    <PackageTags>Result; Result Pattern; Minimal API; AspNetCore; Routing;a</PackageTags>
   </PropertyGroup>
   <ItemGroup>
 	<FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\Bodatero.Result\PackageIcon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Bodatero.Result\Bodatero.Result.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

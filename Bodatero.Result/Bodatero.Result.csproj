@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -8,13 +8,19 @@
     <Authors>Bodatero</Authors>
     <Description>The package contains base entities of Result pattern</Description>
     <Copyright>MIT</Copyright>
-    <PackageProjectUrl>bodatero.result</PackageProjectUrl>
+    <PackageProjectUrl></PackageProjectUrl>
     <PackageIcon>PackageIcon.png</PackageIcon>
-    <PackageTags>Result; Result Pattern; Minimal API; AspNetCore; Routing;</PackageTags>
+    <PackageTags>Result; Result Pattern</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/bohdanex/Bodatero.Result/tree/master/Bodatero.Result</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
     <None Update="PackageIcon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
