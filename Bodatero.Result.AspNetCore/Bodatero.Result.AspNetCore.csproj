@@ -12,21 +12,22 @@
     <PackageIcon>PackageIcon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/bohdanex/Bodatero.Result/tree/master/Bodatero.Result.AspNetCore</RepositoryUrl>
-    <PackageTags>Result; Result Pattern; Minimal API; AspNetCore; Routing;a</PackageTags>
+    <PackageTags>Result; ResultPattern; MinimalAPI; AspNetCore; Routing;</PackageTags>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<Version>1.0.1</Version>
   </PropertyGroup>
   <ItemGroup>
 	<FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Bodatero.Result\PackageIcon.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Bodatero.Result\Bodatero.Result.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <None Update="PackageIcon.png">
+      <PackagePath>\</PackagePath>
+      <Pack>True</Pack>
+    </None>
     <None Update="README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>

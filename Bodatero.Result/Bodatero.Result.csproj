@@ -7,12 +7,15 @@
     <Title>Bodatero's Result pattern domain</Title>
     <Authors>Bodatero</Authors>
     <Description>The package contains base entities of Result pattern</Description>
-    <Copyright>MIT</Copyright>
+    <Copyright></Copyright>
     <PackageProjectUrl></PackageProjectUrl>
     <PackageIcon>PackageIcon.png</PackageIcon>
     <PackageTags>Result; Result Pattern</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/bohdanex/Bodatero.Result/tree/master/Bodatero.Result</RepositoryUrl>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<Version>1.0.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

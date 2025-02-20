@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
-using System.Reflection;
 
 namespace Bodatero.Result.AspNetCore
 {
@@ -26,17 +25,7 @@ namespace Bodatero.Result.AspNetCore
 
                 if (response is Result<T> result)
                 {
-                    var service = resultServiceConfig != null
-                        ? new ResultService(resultServiceConfig)
-                        : context.HttpContext.RequestServices.GetService<ResultService>();
-
-                    if (result.IsSuccess)
-                    {
-                        return service?.SuccessResultHandler?.Invoke(context, result.Value) ?? result.Value;
-                    }
-
-                    context.HttpContext.Response.StatusCode = StatusCodes.Status400BadRequest;
-                    return service?.FailResultHandler?.Invoke(context, result.Error!) ?? result.Error;
+                    Helpers.HandleResult(context, resultServiceConfig, result.IsSuccess, result.Value, result.Error);
                 }
 
                 return response;
@@ -44,8 +33,6 @@ namespace Bodatero.Result.AspNetCore
 
             return routeBuilder;
         }
-
-
 
         /// <summary>
         /// Adds an endpoint filter that processes any <see cref="Result{T}"/> response dynamically.

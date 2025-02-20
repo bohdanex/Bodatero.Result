@@ -6,6 +6,26 @@ namespace Bodatero.Result.AspNetCore
 {
     internal static class Helpers
     {
+        public static object HandleResult(
+            EndpointFilterInvocationContext context,
+            ResultServiceConfig? resultServiceConfig,
+            bool isSuccess,
+            object? resultValue,
+            Exception? resultError)
+        {
+            var service = resultServiceConfig != null
+                            ? new ResultService(resultServiceConfig)
+                            : context.HttpContext.RequestServices.GetService<ResultService>();
+
+            if (isSuccess)
+            {
+                return service?.SuccessResultHandler?.Invoke(context, resultValue) ?? new OkResult(resultValue, 200, "Success");
+            }
+
+            context.HttpContext.Response.StatusCode = StatusCodes.Status400BadRequest;
+            return service?.FailResultHandler?.Invoke(context, resultError!) ?? new BadResult(resultError!);
+        }
+
         public static Func<EndpointFilterInvocationContext, EndpointFilterDelegate, ValueTask<object?>> GetFilterFuncNonGeneric(ResultServiceConfig? resultServiceConfig = null)
         {
             return (async (context, next) =>
@@ -25,17 +45,7 @@ namespace Bodatero.Result.AspNetCore
                         var value = valueProperty.GetValue(response);
                         var error = (Exception)errorProperty!.GetValue(response)!;
 
-                        var service = resultServiceConfig != null
-                            ? new ResultService(resultServiceConfig)
-                            : context.HttpContext.RequestServices.GetService<ResultService>();
-
-                        if (isSuccess)
-                        {
-                            return service?.SuccessResultHandler?.Invoke(context, value) ?? value;
-                        }
-
-                        context.HttpContext.Response.StatusCode = StatusCodes.Status400BadRequest;
-                        return service?.FailResultHandler?.Invoke(context, error) ?? error;
+                        return HandleResult(context, resultServiceConfig, isSuccess, value, error);
                     }
                 }
 

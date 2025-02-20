@@ -45,3 +45,5 @@ public class ProductService
 This approach keeps the logic clear and prevents unnecessary exceptions from being thrown for validation failures.
 
 ---
+
+### Please support me with a donation on [Patreon](https://www.patreon.com/verbro/membership)

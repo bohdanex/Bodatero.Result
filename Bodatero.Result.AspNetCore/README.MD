@@ -28,23 +28,19 @@ Modify `Program.cs` to register the `ResultService`:
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 
-services.AddResult(cfg =>
-{
-    cfg.SuccessResultHandler = (context, value) => new OkResponse(value);
-    cfg.FailResultHandler = (context, error) => new BadResponse(error);
-});
+services.AddResult();
+
+// Optionally configure the service
+//services.AddResult(cfg =>
+//{
+//    cfg.SuccessResultHandler = (context, value) => new OkResponse(value);
+//    cfg.FailResultHandler = (context, error) => new BadResponse(error);
+//});
 
 var app = builder.Build();
 ```
 
-### 2. Define Response Models
-
-```csharp
-public record class BadResponse(Exception Error, int StatusCode = 400);
-public record class OkResponse(object? Data, int StatusCode = 200);
-```
-
-### 3. Using the Service in Minimal API Endpoints
+### 2. Using the Service in Minimal API Endpoints
 
 #### Example 1: Using `WithResult<T>` for a Specific Endpoint
 
@@ -68,8 +64,8 @@ apiGroup.MapPost("", ([FromBody] CreateProductRequest createProductRequest) =>
         }
 
         return validationErrors.Any()
-            ? Result<Product>.Fail(new ValidationException(string.Join('\n', validationErrors)))
-            : Result<Product>.Success(new Product { Name = createProductRequest.Name, Description = createProductRequest.Description });
+            ? new ValidationException(string.Join('\n', validationErrors))
+            : new Product { Name = createProductRequest.Name, Description = createProductRequest.Description };
     }
 
     return CreateProduct();
@@ -99,3 +95,5 @@ apiGroup.MapDelete("{id}", (Guid id) =>
     (context, error) => new BadResponse(error)  // Custom error handler
 ));
 ```
+
+### Please support me with a donation on [Patreon](https://www.patreon.com/verbro/membership)
